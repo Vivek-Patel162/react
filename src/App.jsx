@@ -8,16 +8,16 @@ import LikeButton from "./LikeButton.jsx";
 import LudoBox from "./LudoBoard.jsx";
 import Todo from "./ToDo.jsx";
 import Lottery from "./Lottery.jsx";
+import Ticket from "./Ticket.jsx";
+
 
 function App() {
  
 
   return (
     <>
-    <h1>States in react</h1>
-    {/* <Counter/> */}
-    <Lottery/>
-    </>
+    <Lottery n={3} winningSum={15}/>
+   </>
   );
 }
 
