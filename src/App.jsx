@@ -9,14 +9,20 @@ import LudoBox from "./LudoBoard.jsx";
 import Todo from "./ToDo.jsx";
 import Lottery from "./Lottery.jsx";
 import Ticket from "./Ticket.jsx";
-
+import {sum} from "./helper.js";
+import Form from "./Form.jsx";
 
 function App() {
  
+  let winCondition=(ticket)=>{
+    return ticket.every((num)=>num===ticket[0]);
+
+  };
 
   return (
     <>
-    <Lottery n={3} winningSum={15}/>
+    <Form/>
+    {/* <Lottery n={3} winCondition={winCondition} /> */}
    </>
   );
 }
