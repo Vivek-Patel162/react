@@ -23,11 +23,31 @@ export default function Form() {
         let fieldName=event.target.name;
        
         let newValue=event.target.value;
-        console.log(newValue);
-       }
+       
+
+         setFormData((currData)=>{
+        
+            return {...currData,
+                [fieldName]:newValue};
+
+         });
+        
+     
+       };
+
+     let handleSubmit=(event)=>{
+        event.prevent.Default();
+        console.log(formData);
+        setFormData({
+            fullName:"",
+            userName:"",
+
+        });
+     };
+    
     return (
 
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="fullName">Full Name</label> 
             <input placeholder="enter your name" 
             type="text" 
@@ -37,7 +57,7 @@ export default function Form() {
             name="fullName"
             >
             </input>
-            <button>Submit</button>
+           
 
             <br></br>
             <br></br>
